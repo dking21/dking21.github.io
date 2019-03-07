@@ -1,10 +1,22 @@
-
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <title>Homage to Leffe</title>
+    <head>
+      <script type="text/javascript" src="brython.js"></script>
   </head>
-  <body>
+  <body onload="brython({debug:1, cache:'none'})">
+
+        <script type="text/python">
+        from browser import document, alert
+
+        def echo(event):
+            alert("Hello {} !".format(document["zone"].value))
+
+        document["mybutton"].bind("click", echo)
+        </script>
+
+        <input id="zone"><button id="mybutton">click !</button>
     <h1>Homage to Leffe, best Belgian Beer</h1>
     <p>You don't deserve Leffe, go get some Coors</p>
     <img alt="leffe" src="leffe.jpg"/>
